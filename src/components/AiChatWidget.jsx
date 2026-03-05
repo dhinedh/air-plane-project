@@ -82,7 +82,7 @@ const AiChatWidget = () => {
       {/* Floating Button */}
       <motion.button
         onClick={() => setOpen(o => !o)}
-        className="fixed bottom-6 right-6 z-[9990] w-14 h-14 rounded-full bg-amber-400 hover:bg-amber-300 text-[#060d1a] shadow-[0_0_30px_rgba(251,191,36,0.5)] hover:shadow-[0_0_45px_rgba(251,191,36,0.7)] flex items-center justify-center transition-all"
+        className="fixed bottom-6 right-6 z-[9990] w-14 h-14 rounded-full bg-amber-400 hover:bg-amber-300 text-[#082f49] shadow-[0_0_30px_rgba(251,191,36,0.5)] hover:shadow-[0_0_45px_rgba(251,191,36,0.7)] flex items-center justify-center transition-all"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -97,7 +97,7 @@ const AiChatWidget = () => {
       {/* Ping badge */}
       {!open && (
         <div className="fixed bottom-6 right-6 z-[9991] pointer-events-none">
-          <span className="absolute top-0 right-0 w-3.5 h-3.5 rounded-full bg-green-400 border-2 border-[#060d1a]">
+          <span className="absolute top-0 right-0 w-3.5 h-3.5 rounded-full bg-green-400 border-2 border-[#082f49]">
             <span className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-75"></span>
           </span>
         </div>
@@ -114,9 +114,9 @@ const AiChatWidget = () => {
             className="fixed bottom-24 right-6 z-[9989] w-[370px] max-w-[calc(100vw-3rem)] rounded-2xl overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.6)] border border-white/10"
           >
             {/* Header */}
-            <div className="bg-[#060d1a] border-b border-white/8 px-5 py-4 flex items-center gap-3">
+            <div className="bg-[#082f49] border-b border-white/8 px-5 py-4 flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-amber-400 flex items-center justify-center flex-shrink-0">
-                <Bot className="w-5 h-5 text-[#060d1a]" />
+                <Bot className="w-5 h-5 text-[#082f49]" />
               </div>
               <div className="flex-1 min-w-0">
                 <h3 className="text-white font-black text-sm">DCRUISE AI</h3>
@@ -130,20 +130,19 @@ const AiChatWidget = () => {
             </div>
 
             {/* Messages */}
-            <div className="bg-[#07101f] h-80 overflow-y-auto p-4 space-y-4 scroll-smooth">
+            <div className="bg-[#082f49] h-80 overflow-y-auto p-4 space-y-4 scroll-smooth">
               {messages.map((m, i) => (
                 <div key={i} className={`flex gap-3 ${m.role === 'user' ? 'flex-row-reverse' : ''}`}>
                   <div className={`w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 ${m.role === 'user' ? 'bg-amber-400/20 border border-amber-400/30' : 'bg-amber-400'}`}>
                     {m.role === 'user'
                       ? <User className="w-3.5 h-3.5 text-amber-400" />
-                      : <Bot className="w-3.5 h-3.5 text-[#060d1a]" />
+                      : <Bot className="w-3.5 h-3.5 text-[#082f49]" />
                     }
                   </div>
-                  <div className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${
-                    m.role === 'user'
-                      ? 'bg-amber-400/15 border border-amber-400/20 text-white/90 rounded-tr-sm'
-                      : 'bg-white/6 border border-white/8 text-white/80 rounded-tl-sm'
-                  }`}>
+                  <div className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${m.role === 'user'
+                    ? 'bg-amber-400/15 border border-amber-400/20 text-white/90 rounded-tr-sm'
+                    : 'bg-white/6 border border-white/8 text-white/80 rounded-tl-sm'
+                    }`}>
                     {renderText(m.content)}
                   </div>
                 </div>
@@ -152,7 +151,7 @@ const AiChatWidget = () => {
               {loading && (
                 <div className="flex gap-3">
                   <div className="w-7 h-7 rounded-lg bg-amber-400 flex items-center justify-center flex-shrink-0">
-                    <Bot className="w-3.5 h-3.5 text-[#060d1a]" />
+                    <Bot className="w-3.5 h-3.5 text-[#082f49]" />
                   </div>
                   <div className="bg-white/6 border border-white/8 rounded-2xl rounded-tl-sm px-4 py-3 flex items-center gap-2">
                     <Loader2 className="w-4 h-4 text-amber-400 animate-spin" />
@@ -166,7 +165,7 @@ const AiChatWidget = () => {
 
             {/* Suggestions */}
             {messages.length <= 1 && (
-              <div className="bg-[#07101f] border-t border-white/5 px-4 py-3 flex gap-2 overflow-x-auto">
+              <div className="bg-[#082f49] border-t border-white/5 px-4 py-3 flex gap-2 overflow-x-auto">
                 {SUGGESTIONS.map((s, i) => (
                   <button
                     key={i}
@@ -180,7 +179,7 @@ const AiChatWidget = () => {
             )}
 
             {/* Input */}
-            <div className="bg-[#060d1a] border-t border-white/8 p-3 flex gap-2">
+            <div className="bg-[#082f49] border-t border-white/8 p-3 flex gap-2">
               <input
                 ref={inputRef}
                 value={input}
@@ -192,7 +191,7 @@ const AiChatWidget = () => {
               <button
                 onClick={() => send()}
                 disabled={!input.trim() || loading}
-                className="w-10 h-10 rounded-xl bg-amber-400 hover:bg-amber-300 text-[#060d1a] flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed flex-shrink-0"
+                className="w-10 h-10 rounded-xl bg-amber-400 hover:bg-amber-300 text-[#082f49] flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed flex-shrink-0"
               >
                 <Send className="w-4 h-4" />
               </button>

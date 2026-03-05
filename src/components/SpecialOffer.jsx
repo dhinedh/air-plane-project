@@ -4,7 +4,7 @@ import { Phone, Mail } from 'lucide-react';
 import { fadeUp } from '../utils/animations';
 
 const SpecialOffer = () => (
-  <section className="py-6 px-6 lg:px-16 bg-[#07101f]">
+  <section className="py-6 px-6 lg:px-16 bg-[#082f49]">
     <motion.div
       initial="hidden"
       whileInView="visible"
@@ -19,13 +19,13 @@ const SpecialOffer = () => (
         className="absolute inset-0 w-full h-full object-cover"
       />
       {/* Dark overlay with a left-leaning amber glow */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#060d1a]/98 via-[#060d1a]/80 to-[#060d1a]/60"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#082f49]/98 via-[#082f49]/80 to-[#082f49]/60"></div>
       <div className="absolute -left-32 top-1/2 -translate-y-1/2 w-96 h-96 bg-amber-400/15 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="relative z-10 py-20 px-10 md:px-20 flex flex-col lg:flex-row items-center justify-between gap-12">
         {/* Left text */}
         <div className="max-w-xl">
-          <span className="inline-block bg-amber-400 text-[#060d1a] text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+          <span className="inline-block bg-amber-400 text-[#082f49] text-xs font-black uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
             🎉 Limited Time Offer
           </span>
           <h2 className="text-4xl md:text-6xl font-black text-white leading-tight mb-5">
@@ -41,8 +41,8 @@ const SpecialOffer = () => (
           <h3 className="text-white font-black text-xl mb-6">Get a Free Quote</h3>
           <div className="space-y-4">
             <a href="tel:+919600213XXX" className="flex items-center gap-4 group bg-amber-400/10 hover:bg-amber-400 border border-amber-400/20 hover:border-amber-400 rounded-xl px-5 py-4 transition-all duration-300">
-              <div className="w-10 h-10 rounded-lg bg-amber-400 group-hover:bg-[#060d1a] flex items-center justify-center flex-shrink-0 transition-colors">
-                <Phone className="w-5 h-5 text-[#060d1a] group-hover:text-amber-400" />
+              <div className="w-10 h-10 rounded-lg bg-amber-400 group-hover:bg-[#082f49] flex items-center justify-center flex-shrink-0 transition-colors">
+                <Phone className="w-5 h-5 text-[#082f49] group-hover:text-amber-400" />
               </div>
               <div>
                 <p className="text-amber-400 group-hover:text-[#060d1a] font-black transition-colors text-sm">Call Us Now</p>
@@ -62,7 +62,7 @@ const SpecialOffer = () => (
 
             <Link
               to="/contact"
-              className="block text-center bg-amber-400 hover:bg-amber-300 text-[#060d1a] font-black text-sm px-6 py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:shadow-[0_0_35px_rgba(251,191,36,0.5)]"
+              className="block text-center bg-amber-400 hover:bg-amber-300 text-[#082f49] font-black text-sm px-6 py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:shadow-[0_0_35px_rgba(251,191,36,0.5)]"
             >
               Fill Enquiry Form →
             </Link>

@@ -11,7 +11,7 @@ const Hero = () => {
   const textY = useTransform(scrollYProgress, [0, 1], ['0%', '12%']);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-end pb-24 pt-28 overflow-hidden bg-[#060d1a]">
+    <section ref={sectionRef} className="relative min-h-screen flex items-end pb-24 pt-28 overflow-hidden bg-[#082f49]">
 
       {/* Parallax cinematic BG */}
       <motion.div
@@ -24,8 +24,8 @@ const Hero = () => {
           className="w-full h-full object-cover scale-110"
         />
         {/* Multi-layer overlays for dramatic look */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060d1a] via-[#060d1a]/60 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#060d1a]/80 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#082f49] via-[#082f49]/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#082f49]/80 via-transparent to-transparent"></div>
       </motion.div>
 
       {/* Gold accent line left */}

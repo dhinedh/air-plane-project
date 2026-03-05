@@ -5,16 +5,16 @@ import { fadeUp, staggerContainer } from '../utils/animations';
 
 const Destinations = () => {
   const indiaDests = [
-    { name: 'Goa',     image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80', tag: 'Beaches & Culture' },
-    { name: 'Kerala',  image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80', tag: 'Backwaters & Spice' },
-    { name: 'Manali',  image: 'https://images.unsplash.com/photo-1605649487212-4d5cae60eb11?auto=format&fit=crop&w=800&q=80', tag: 'Snow & Adventure' },
+    { name: 'Goa', image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=800&q=80', tag: 'Beaches & Culture' },
+    { name: 'Kerala', image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=800&q=80', tag: 'Backwaters & Spice' },
+    { name: 'Manali', image: 'https://images.unsplash.com/photo-1605649487212-4d5cae60eb11?auto=format&fit=crop&w=800&q=80', tag: 'Snow & Adventure' },
     { name: 'Andaman', image: 'https://images.unsplash.com/photo-1596422846543-74c6fc0e5f2a?auto=format&fit=crop&w=800&q=80', tag: 'Islands & Diving' },
   ];
   const intlDests = [
-    { name: 'Maldives',    image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80', tag: 'Romance & Luxury' },
-    { name: 'Bali',        image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80', tag: 'Temples & Beaches' },
+    { name: 'Maldives', image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80', tag: 'Romance & Luxury' },
+    { name: 'Bali', image: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80', tag: 'Temples & Beaches' },
     { name: 'Switzerland', image: 'https://images.unsplash.com/photo-1527668752968-14ce70a40d7c?auto=format&fit=crop&w=800&q=80', tag: 'Alps & Scenic' },
-    { name: 'Paris',       image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80', tag: 'Art & Gastronomy' },
+    { name: 'Paris', image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80', tag: 'Art & Gastronomy' },
   ];
 
   const DestinationCard = ({ dest, large = false }) => (
@@ -88,7 +88,7 @@ const Destinations = () => {
   );
 
   return (
-    <section className="py-28 bg-[#07101f]">
+    <section className="py-28 bg-[#082f49]">
       <div className="container mx-auto px-6 lg:px-16">
 
         {/* Section eyebrow */}
@@ -103,12 +103,12 @@ const Destinations = () => {
           </div>
         </motion.div>
 
-        <DestSection title="Discover India"         num="01" dests={indiaDests} linkTo="/india-destinations" />
-        <DestSection title="International Escapes"  num="02" dests={intlDests}  linkTo="/international-destinations" />
+        <DestSection title="Discover India" num="01" dests={indiaDests} linkTo="/india-destinations" />
+        <DestSection title="International Escapes" num="02" dests={intlDests} linkTo="/international-destinations" />
 
         {/* CTA */}
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center">
-          <Link to="/packages" className="inline-flex items-center gap-3 bg-amber-400 hover:bg-amber-300 text-[#060d1a] font-black text-lg px-12 py-4 rounded-full transition-all shadow-[0_0_40px_rgba(251,191,36,0.3)] hover:shadow-[0_0_60px_rgba(251,191,36,0.5)]">
+          <Link to="/packages" className="inline-flex items-center gap-3 bg-amber-400 hover:bg-amber-300 text-[#082f49] font-black text-lg px-12 py-4 rounded-full transition-all shadow-[0_0_40px_rgba(251,191,36,0.3)] hover:shadow-[0_0_60px_rgba(251,191,36,0.5)]">
             Browse All Packages <ArrowRight className="w-5 h-5" />
           </Link>
         </motion.div>

@@ -10,7 +10,7 @@ const packages = [
     price: '₹85,000',
     per: 'per couple',
     tag: 'Bestseller',
-    tagColor: 'bg-amber-400 text-[#060d1a]',
+    tagColor: 'bg-amber-400 text-[#082f49]',
     image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80',
   },
   {
@@ -43,7 +43,7 @@ const packages = [
 ];
 
 const FeaturedPackages = () => (
-  <section className="py-28 bg-[#07101f]">
+  <section className="py-28 bg-[#082f49]">
     <div className="container mx-auto px-6 lg:px-16">
 
       <motion.div
@@ -77,7 +77,7 @@ const FeaturedPackages = () => (
             {/* Image */}
             <div className="relative h-52 overflow-hidden">
               <img src={pkg.image} alt={pkg.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#060d1a] via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#082f49] via-transparent to-transparent"></div>
               {/* Badge */}
               <span className={`absolute top-3 left-3 text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full ${pkg.tagColor}`}>
                 {pkg.tag}
@@ -96,7 +96,7 @@ const FeaturedPackages = () => (
                   <p className="text-amber-400 text-2xl font-black">{pkg.price}</p>
                   <p className="text-white/30 text-xs font-semibold">{pkg.per}</p>
                 </div>
-                <Link to="/contact" className="bg-amber-400/10 hover:bg-amber-400 border border-amber-400/30 hover:border-amber-400 text-amber-400 hover:text-[#060d1a] font-bold text-xs px-4 py-2 rounded-xl transition-all duration-300">
+                <Link to="/contact" className="bg-amber-400/10 hover:bg-amber-400 border border-amber-400/30 hover:border-amber-400 text-amber-400 hover:text-[#082f49] font-bold text-xs px-4 py-2 rounded-xl transition-all duration-300">
                   Book Now
                 </Link>
               </div>

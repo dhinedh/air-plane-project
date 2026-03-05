@@ -112,12 +112,12 @@ Keep it concise, specific, and inspiring. End with a one-line call to action men
       {/* World map background */}
       <div className="absolute inset-0">
         <img
-          src="/images/world-map-premium.png"
+          src="/images/world-at-night.png"
           alt="World map"
-          className="w-full h-full object-cover object-center opacity-60 mix-blend-luminosity"
+          className="w-full h-full object-cover object-center opacity-70 mix-blend-luminosity"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#060d1a]/60 via-[#060d1a]/40 to-[#060d1a]/70"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#060d1a]/40 via-transparent to-[#060d1a]/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#082f49]/60 via-[#082f49]/40 to-[#082f49]/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#082f49]/40 via-transparent to-[#082f49]/40"></div>
       </div>
       {/* Amber center glow */}
       <div className="absolute inset-0 pointer-events-none">

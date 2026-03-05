@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="bg-ocean-900 text-slate-300 pt-20 pb-10 border-t-4 border-aqua-500">
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          
+
           {/* Brand Col */}
           <div className="space-y-6">
             <div>
@@ -46,7 +46,7 @@ const Footer = () => {
             <ul className="space-y-4">
               {['Home', 'Packages', 'Group Tours', 'Honeymoon', 'Contact'].map((link) => (
                 <li key={link}>
-                  <Link 
+                  <Link
                     to={link === 'Home' ? '/' : `/${link.toLowerCase().replace(' ', '-')}`}
                     className="hover:text-aqua-400 transition-colors flex items-center gap-2 group"
                   >
@@ -67,7 +67,7 @@ const Footer = () => {
             <ul className="space-y-4">
               {['Maldives', 'Bali', 'Goa', 'Kerala Backwaters', 'Dubai', 'Europe'].map((link) => (
                 <li key={link}>
-                  <Link 
+                  <Link
                     to="#"
                     className="hover:text-aqua-400 transition-colors flex items-center gap-2 group"
                   >

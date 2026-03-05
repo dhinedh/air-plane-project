@@ -31,17 +31,16 @@ const Header = () => {
   ];
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? 'bg-[#060d1a]/95 backdrop-blur-xl border-b border-white/8 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : 'bg-transparent py-5'
-      }`}
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-[#060d1a]/95 backdrop-blur-xl border-b border-white/8 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : 'bg-transparent py-5'
+        }`}
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
             {/* Logo */}
             <div className="w-10 h-10 rounded-xl bg-amber-400 flex items-center justify-center shadow-lg">
-              <span className="text-[#060d1a] font-black text-xl leading-none">D</span>
+              <span className="text-[#082f49] font-black text-xl leading-none">D</span>
             </div>
             <div>
               <h1 className="font-black text-2xl tracking-tight leading-none text-white">
@@ -56,14 +55,13 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
             {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
+              <Link
+                key={link.name}
                 to={link.path}
-                className={`whitespace-nowrap text-sm font-semibold transition-colors hover:text-amber-400 ${
-                  location.pathname === link.path 
-                    ? 'text-amber-400' 
-                    : 'text-white/70'
-                }`}
+                className={`whitespace-nowrap text-sm font-semibold transition-colors hover:text-amber-400 ${location.pathname === link.path
+                  ? 'text-amber-400'
+                  : 'text-white/70'
+                  }`}
               >
                 {link.name}
               </Link>
@@ -76,13 +74,13 @@ const Header = () => {
               <Phone className="w-4 h-4" />
               +91 9600213XXX
             </a>
-            <Link to="/contact" className="whitespace-nowrap bg-amber-400 hover:bg-amber-300 text-[#060d1a] font-black text-sm px-6 py-2.5 rounded-full transition-all shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:shadow-[0_0_30px_rgba(251,191,36,0.5)]">
+            <Link to="/contact" className="whitespace-nowrap bg-amber-400 hover:bg-amber-300 text-[#082f49] font-black text-sm px-6 py-2.5 rounded-full transition-all shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:shadow-[0_0_30px_rgba(251,191,36,0.5)]">
               Get In Touch
             </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button 
+          <button
             className="lg:hidden p-2 rounded-lg text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
@@ -96,12 +94,11 @@ const Header = () => {
         <div className="lg:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-slate-100 overflow-hidden animate-fade-in">
           <nav className="flex flex-col py-4 px-6 gap-4">
             {navLinks.map((link) => (
-              <Link 
-                key={link.name} 
+              <Link
+                key={link.name}
                 to={link.path}
-                className={`text-lg font-medium py-2 border-b border-slate-50 ${
-                  location.pathname === link.path ? 'text-ocean-600' : 'text-slate-700'
-                }`}
+                className={`text-lg font-medium py-2 border-b border-slate-50 ${location.pathname === link.path ? 'text-ocean-600' : 'text-slate-700'
+                  }`}
               >
                 {link.name}
               </Link>

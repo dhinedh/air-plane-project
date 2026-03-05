@@ -8,11 +8,17 @@
   html {
     scroll-behavior: smooth;
   }
+
   body {
     @apply font-sans antialiased text-slate-800 bg-slate-50;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-sans font-bold text-slate-900;
   }
 }
@@ -21,15 +27,15 @@
   .glass {
     @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg;
   }
-  
+
   .glass-dark {
     @apply bg-ocean-900/80 backdrop-blur-md border border-ocean-700/50 shadow-xl;
   }
-  
+
   .btn-primary {
     @apply px-6 py-3 rounded-full bg-gradient-to-r from-ocean-500 to-aqua-500 text-white font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300;
   }
-  
+
   .btn-outline {
     @apply px-6 py-3 rounded-full border-2 border-ocean-500 text-ocean-600 font-semibold hover:bg-ocean-50 transition-all duration-300 hover:-translate-y-0.5;
   }

@@ -26,14 +26,14 @@ const AnimatedCounter = ({ to, duration = 2.5 }) => {
 
 const Stats = () => {
   const stats = [
-    { icon: <Users className="w-7 h-7" />, numeric: true,  value: "500+",  label: "Happy Travelers"     },
-    { icon: <Clock className="w-7 h-7" />, numeric: false, value: "24x7",  label: "Support Available"   },
-    { icon: <Globe2 className="w-7 h-7"/>, numeric: false, value: "6",     label: "Continents Visited"  },
-    { icon: <Award className="w-7 h-7" />, numeric: true,  value: "21+",   label: "Years of Experience" },
+    { icon: <Users className="w-7 h-7" />, numeric: true, value: "500+", label: "Happy Travelers" },
+    { icon: <Clock className="w-7 h-7" />, numeric: false, value: "24x7", label: "Support Available" },
+    { icon: <Globe2 className="w-7 h-7" />, numeric: false, value: "6", label: "Continents Visited" },
+    { icon: <Award className="w-7 h-7" />, numeric: true, value: "21+", label: "Years of Experience" },
   ];
 
   return (
-    <section className="bg-[#060d1a] py-0">
+    <section className="bg-[#082f49] py-0">
       {/* Full-width amber divider strip */}
       <div className="w-full h-px bg-gradient-to-r from-transparent via-amber-400/60 to-transparent"></div>
 
