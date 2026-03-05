@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply font-sans antialiased text-white/90 bg-brand-primary;
+    @apply font-sans antialiased text-slate-800 bg-slate-50;
   }
 
   h1,
@@ -19,7 +19,7 @@
   h4,
   h5,
   h6 {
-    @apply font-sans font-bold text-white;
+    @apply font-sans font-bold text-slate-900;
   }
 }
 
@@ -29,15 +29,15 @@
   }
 
   .glass-dark {
-    @apply bg-brand-surface/80 backdrop-blur-md border border-white/10 shadow-xl;
+    @apply bg-ocean-900/80 backdrop-blur-md border border-ocean-700/50 shadow-xl;
   }
 
   .btn-primary {
-    @apply px-8 py-4 rounded-full bg-brand-accent text-brand-primary font-black shadow-brand-glow hover:shadow-brand-glow-hover hover:-translate-y-0.5 transition-all duration-300;
+    @apply px-6 py-3 rounded-full bg-gradient-to-r from-ocean-500 to-aqua-500 text-white font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300;
   }
 
   .btn-outline {
-    @apply px-8 py-4 rounded-full border-2 border-brand-accent text-brand-accent font-black hover:bg-brand-accent/10 transition-all duration-300 hover:-translate-y-0.5;
+    @apply px-6 py-3 rounded-full border-2 border-ocean-500 text-ocean-600 font-semibold hover:bg-ocean-50 transition-all duration-300 hover:-translate-y-0.5;
   }
 }
 

@@ -70,7 +70,7 @@ const AiChatWidget = () => {
         const parts = line.split(/\*\*(.*?)\*\*/g);
         return (
           <span key={i}>
-            {parts.map((p, j) => j % 2 === 1 ? <strong key={j} className="font-black text-amber-300">{p}</strong> : p)}
+            {parts.map((p, j) => j % 2 === 1 ? <strong key={j} className="font-black text-sky-300">{p}</strong> : p)}
             {i < text.split('\n').length - 1 && <br />}
           </span>
         );
@@ -82,7 +82,7 @@ const AiChatWidget = () => {
       {/* Floating Button */}
       <motion.button
         onClick={() => setOpen(o => !o)}
-        className="fixed bottom-6 right-6 z-[9990] w-14 h-14 rounded-full bg-brand-accent hover:bg-amber-300 text-brand-primary shadow-[0_0_30px_rgba(251,191,36,0.5)] hover:shadow-[0_0_45px_rgba(251,191,36,0.7)] flex items-center justify-center transition-all"
+        className="fixed bottom-6 right-6 z-[9990] w-14 h-14 rounded-full bg-sky-400 hover:bg-sky-300 text-[#082f49] shadow-[0_0_30px_rgba(251,191,36,0.5)] hover:shadow-[0_0_45px_rgba(251,191,36,0.7)] flex items-center justify-center transition-all"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -97,7 +97,7 @@ const AiChatWidget = () => {
       {/* Ping badge */}
       {!open && (
         <div className="fixed bottom-6 right-6 z-[9991] pointer-events-none">
-          <span className="absolute top-0 right-0 w-3.5 h-3.5 rounded-full bg-green-400 border-2 border-brand-primary">
+          <span className="absolute top-0 right-0 w-3.5 h-3.5 rounded-full bg-green-400 border-2 border-[#082f49]">
             <span className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-75"></span>
           </span>
         </div>
@@ -114,9 +114,9 @@ const AiChatWidget = () => {
             className="fixed bottom-24 right-6 z-[9989] w-[370px] max-w-[calc(100vw-3rem)] rounded-2xl overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.6)] border border-white/10"
           >
             {/* Header */}
-            <div className="bg-brand-primary border-b border-white/8 px-5 py-4 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-brand-accent flex items-center justify-center flex-shrink-0">
-                <Bot className="w-5 h-5 text-brand-primary" />
+            <div className="bg-[#082f49] border-b border-white/8 px-5 py-4 flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-sky-400 flex items-center justify-center flex-shrink-0">
+                <Bot className="w-5 h-5 text-[#082f49]" />
               </div>
               <div className="flex-1 min-w-0">
                 <h3 className="text-white font-black text-sm">DCRUISE AI</h3>
@@ -130,17 +130,17 @@ const AiChatWidget = () => {
             </div>
 
             {/* Messages */}
-            <div className="bg-brand-primary h-80 overflow-y-auto p-4 space-y-4 scroll-smooth">
+            <div className="bg-[#082f49] h-80 overflow-y-auto p-4 space-y-4 scroll-smooth">
               {messages.map((m, i) => (
                 <div key={i} className={`flex gap-3 ${m.role === 'user' ? 'flex-row-reverse' : ''}`}>
-                  <div className={`w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 ${m.role === 'user' ? 'bg-amber-400/20 border border-amber-400/30' : 'bg-amber-400'}`}>
+                  <div className={`w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 ${m.role === 'user' ? 'bg-sky-400/20 border border-sky-400/30' : 'bg-sky-400'}`}>
                     {m.role === 'user'
-                      ? <User className="w-3.5 h-3.5 text-amber-400" />
-                      : <Bot className="w-3.5 h-3.5 text-brand-primary" />
+                      ? <User className="w-3.5 h-3.5 text-sky-400" />
+                      : <Bot className="w-3.5 h-3.5 text-[#082f49]" />
                     }
                   </div>
                   <div className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed ${m.role === 'user'
-                    ? 'bg-amber-400/15 border border-amber-400/20 text-white/90 rounded-tr-sm'
+                    ? 'bg-sky-400/15 border border-sky-400/20 text-white/90 rounded-tr-sm'
                     : 'bg-white/6 border border-white/8 text-white/80 rounded-tl-sm'
                     }`}>
                     {renderText(m.content)}
@@ -150,11 +150,11 @@ const AiChatWidget = () => {
 
               {loading && (
                 <div className="flex gap-3">
-                  <div className="w-7 h-7 rounded-lg bg-amber-400 flex items-center justify-center flex-shrink-0">
-                    <Bot className="w-3.5 h-3.5 text-brand-primary" />
+                  <div className="w-7 h-7 rounded-lg bg-sky-400 flex items-center justify-center flex-shrink-0">
+                    <Bot className="w-3.5 h-3.5 text-[#082f49]" />
                   </div>
                   <div className="bg-white/6 border border-white/8 rounded-2xl rounded-tl-sm px-4 py-3 flex items-center gap-2">
-                    <Loader2 className="w-4 h-4 text-amber-400 animate-spin" />
+                    <Loader2 className="w-4 h-4 text-sky-400 animate-spin" />
                     <span className="text-white/40 text-xs">Thinking...</span>
                   </div>
                 </div>
@@ -165,12 +165,12 @@ const AiChatWidget = () => {
 
             {/* Suggestions */}
             {messages.length <= 1 && (
-              <div className="bg-brand-primary border-t border-white/5 px-4 py-3 flex gap-2 overflow-x-auto">
+              <div className="bg-[#082f49] border-t border-white/5 px-4 py-3 flex gap-2 overflow-x-auto">
                 {SUGGESTIONS.map((s, i) => (
                   <button
                     key={i}
                     onClick={() => send(s)}
-                    className="flex-shrink-0 text-[11px] font-semibold text-white/60 hover:text-amber-300 border border-white/10 hover:border-amber-400/40 rounded-full px-3 py-1.5 transition-all"
+                    className="flex-shrink-0 text-[11px] font-semibold text-white/60 hover:text-sky-300 border border-white/10 hover:border-sky-400/40 rounded-full px-3 py-1.5 transition-all"
                   >
                     {s}
                   </button>
@@ -179,19 +179,19 @@ const AiChatWidget = () => {
             )}
 
             {/* Input */}
-            <div className="bg-brand-primary border-t border-white/8 p-3 flex gap-2">
+            <div className="bg-[#082f49] border-t border-white/8 p-3 flex gap-2">
               <input
                 ref={inputRef}
                 value={input}
                 onChange={e => setInput(e.target.value)}
                 onKeyDown={e => e.key === 'Enter' && !e.shiftKey && send()}
                 placeholder="Ask about any destination..."
-                className="flex-1 bg-white/6 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-amber-400/50 transition-colors"
+                className="flex-1 bg-white/6 border border-white/10 rounded-xl px-4 py-2.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-sky-400/50 transition-colors"
               />
               <button
                 onClick={() => send()}
                 disabled={!input.trim() || loading}
-                className="w-10 h-10 rounded-xl bg-brand-accent hover:bg-amber-300 text-brand-primary flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed flex-shrink-0"
+                className="w-10 h-10 rounded-xl bg-sky-400 hover:bg-sky-300 text-[#082f49] flex items-center justify-center transition-all disabled:opacity-40 disabled:cursor-not-allowed flex-shrink-0"
               >
                 <Send className="w-4 h-4" />
               </button>

@@ -23,12 +23,6 @@ export default {
           400: '#48cae4',
           500: '#00b4d8',
           600: '#0096c7',
-        },
-        brand: {
-          primary: '#082f49', // Deep Ocean
-          accent: '#fbbf24',  // Luxury Gold (Amber 400)
-          surface: '#0a3d60', // Card/Surface Blue
-          muted: '#64748b',   // Slate 500 equivalent
         }
       },
       fontFamily: {
@@ -52,10 +46,6 @@ export default {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-10px)' },
         }
-      },
-      boxShadow: {
-        'brand-glow': '0 0 30px rgba(251, 191, 36, 0.3)',
-        'brand-glow-hover': '0 0 50px rgba(251, 191, 36, 0.5)',
       }
     },
   },

@@ -10,7 +10,7 @@ import Testimonials from '../components/Testimonials';
 
 const Home = () => {
   return (
-    <div className="bg-brand-primary">
+    <div className="bg-[#082f49]">
       <Hero />
       <Stats />
       <WhyChooseUs />

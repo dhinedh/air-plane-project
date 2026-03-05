@@ -27,17 +27,17 @@ const Destinations = () => {
       <img src={dest.image} alt={dest.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
       {/* Amber glow on hover */}
-      <div className="absolute inset-0 ring-0 group-hover:ring-2 ring-amber-400/60 rounded-2xl transition-all duration-500"></div>
+      <div className="absolute inset-0 ring-0 group-hover:ring-2 ring-sky-400/60 rounded-2xl transition-all duration-500"></div>
 
       {/* Tag */}
       <div className="absolute top-4 left-4 bg-black/40 backdrop-blur-md border border-white/15 rounded-full px-3 py-1">
-        <span className="text-[11px] text-amber-300 font-bold uppercase tracking-wider">{dest.tag}</span>
+        <span className="text-[11px] text-sky-300 font-bold uppercase tracking-wider">{dest.tag}</span>
       </div>
 
       {/* Name */}
       <div className="absolute bottom-0 left-0 right-0 p-6">
-        <h3 className={`font-black text-white flex items-center gap-2 group-hover:text-amber-300 transition-colors duration-300 ${large ? 'text-3xl' : 'text-xl'}`}>
-          <MapPin className={`text-amber-400 flex-shrink-0 ${large ? 'w-6 h-6' : 'w-4 h-4'}`} />
+        <h3 className={`font-black text-white flex items-center gap-2 group-hover:text-sky-300 transition-colors duration-300 ${large ? 'text-3xl' : 'text-xl'}`}>
+          <MapPin className={`text-sky-400 flex-shrink-0 ${large ? 'w-6 h-6' : 'w-4 h-4'}`} />
           {dest.name}
         </h3>
         <p className="text-xs text-white/50 font-semibold mt-1.5 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
@@ -55,10 +55,10 @@ const Destinations = () => {
       {/* Section header */}
       <motion.div variants={fadeUp} className="flex justify-between items-end mb-10">
         <div>
-          <span className="text-amber-400 text-xs font-bold uppercase tracking-[0.25em] block mb-2">Section {num}</span>
+          <span className="text-sky-400 text-xs font-bold uppercase tracking-[0.25em] block mb-2">Section {num}</span>
           <h3 className="text-4xl md:text-5xl font-black text-white">{title}</h3>
         </div>
-        <Link to={linkTo} className="flex items-center gap-2 text-white/50 hover:text-amber-400 transition-colors text-sm font-bold uppercase tracking-widest group">
+        <Link to={linkTo} className="flex items-center gap-2 text-white/50 hover:text-sky-400 transition-colors text-sm font-bold uppercase tracking-widest group">
           View All <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </Link>
       </motion.div>
@@ -79,7 +79,7 @@ const Destinations = () => {
           ? ['Shimla', 'Munnar', 'Kodaikanal', 'Coorg', 'Ooty', 'Kashmir', 'Darjeeling']
           : ['Mauritius', 'Phuket', 'Seychelles', 'Italy', 'Greece', 'Thailand', 'Dubai']
         ).map((p) => (
-          <span key={p} className="px-4 py-2 rounded-full border border-white/10 text-white/50 hover:border-amber-400/60 hover:text-amber-300 text-xs font-bold uppercase tracking-wider cursor-pointer transition-all">
+          <span key={p} className="px-4 py-2 rounded-full border border-white/10 text-white/50 hover:border-sky-400/60 hover:text-sky-300 text-xs font-bold uppercase tracking-wider cursor-pointer transition-all">
             {p}
           </span>
         ))}
@@ -88,7 +88,7 @@ const Destinations = () => {
   );
 
   return (
-    <section className="py-28 bg-brand-primary">
+    <section className="py-28 bg-[#082f49]">
       <div className="container mx-auto px-6 lg:px-16">
 
         {/* Section eyebrow */}
@@ -96,9 +96,9 @@ const Destinations = () => {
           initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={fadeUp}
           className="mb-20 flex items-center gap-5"
         >
-          <div className="h-px flex-1 max-w-[60px] bg-amber-400"></div>
+          <div className="h-px flex-1 max-w-[60px] bg-sky-400"></div>
           <div>
-            <p className="text-amber-400 font-bold uppercase tracking-[0.25em] text-xs mb-2">Explore By Region</p>
+            <p className="text-sky-400 font-bold uppercase tracking-[0.25em] text-xs mb-2">Explore By Region</p>
             <h2 className="text-5xl md:text-6xl font-black text-white">Popular Destinations</h2>
           </div>
         </motion.div>
@@ -108,7 +108,7 @@ const Destinations = () => {
 
         {/* CTA */}
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center">
-          <Link to="/packages" className="inline-flex items-center gap-3 bg-brand-accent hover:bg-amber-300 text-brand-primary font-black text-lg px-12 py-4 rounded-full transition-all shadow-[0_0_40px_rgba(251,191,36,0.3)] hover:shadow-[0_0_60px_rgba(251,191,36,0.5)]">
+          <Link to="/packages" className="inline-flex items-center gap-3 bg-sky-400 hover:bg-sky-300 text-[#082f49] font-black text-lg px-12 py-4 rounded-full transition-all shadow-[0_0_40px_rgba(251,191,36,0.3)] hover:shadow-[0_0_60px_rgba(251,191,36,0.5)]">
             Browse All Packages <ArrowRight className="w-5 h-5" />
           </Link>
         </motion.div>

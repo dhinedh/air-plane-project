@@ -36,7 +36,7 @@ const features = [
 ];
 
 const WhyChooseUs = () => (
-  <section className="py-28 bg-brand-primary relative overflow-hidden">
+  <section className="py-28 bg-[#082f49] relative overflow-hidden">
     {/* Subtle grid texture */}
     <div className="absolute inset-0 opacity-5 pointer-events-none"
       style={{ backgroundImage: 'linear-gradient(rgba(251,191,36,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(251,191,36,0.3) 1px, transparent 1px)', backgroundSize: '60px 60px' }}>
@@ -47,9 +47,9 @@ const WhyChooseUs = () => (
         initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={fadeUp}
         className="flex items-center gap-5 mb-20"
       >
-        <div className="h-px w-16 bg-amber-400"></div>
+        <div className="h-px w-16 bg-sky-400"></div>
         <div>
-          <p className="text-amber-400 font-bold uppercase tracking-[0.25em] text-xs mb-2">Our Promise</p>
+          <p className="text-sky-400 font-bold uppercase tracking-[0.25em] text-xs mb-2">Our Promise</p>
           <h2 className="text-5xl md:text-6xl font-black text-white">Why Choose DCRUISE?</h2>
         </div>
       </motion.div>
@@ -62,17 +62,17 @@ const WhyChooseUs = () => (
           <motion.div
             key={i}
             variants={fadeUp}
-            className="group relative rounded-2xl border border-white/8 p-8 bg-white/3 hover:bg-white/6 hover:border-amber-400/30 transition-all duration-400 overflow-hidden"
+            className="group relative rounded-2xl border border-white/8 p-8 bg-white/3 hover:bg-white/6 hover:border-sky-400/30 transition-all duration-400 overflow-hidden"
             whileHover={{ y: -5 }}
             transition={{ type: 'spring', stiffness: 260, damping: 22 }}
           >
             {/* Amber corner glow */}
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-amber-400/5 rounded-full group-hover:bg-amber-400/15 transition-colors duration-500"></div>
+            <div className="absolute -top-10 -right-10 w-32 h-32 bg-sky-400/5 rounded-full group-hover:bg-sky-400/15 transition-colors duration-500"></div>
 
-            <div className="w-14 h-14 rounded-xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-amber-400 mb-6 group-hover:bg-amber-400/20 group-hover:scale-110 transition-all duration-400 relative z-10">
+            <div className="w-14 h-14 rounded-xl bg-sky-400/10 border border-sky-400/20 flex items-center justify-center text-sky-400 mb-6 group-hover:bg-sky-400/20 group-hover:scale-110 transition-all duration-400 relative z-10">
               {f.icon}
             </div>
-            <h3 className="text-xl font-black text-white mb-3 relative z-10 group-hover:text-amber-300 transition-colors">{f.title}</h3>
+            <h3 className="text-xl font-black text-white mb-3 relative z-10 group-hover:text-sky-300 transition-colors">{f.title}</h3>
             <p className="text-white/50 text-sm leading-relaxed relative z-10 font-light">{f.desc}</p>
           </motion.div>
         ))}

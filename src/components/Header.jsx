@@ -32,15 +32,15 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-brand-primary/95 backdrop-blur-xl border-b border-white/8 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : 'bg-transparent py-5'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-[#060d1a]/95 backdrop-blur-xl border-b border-white/8 py-3 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' : 'bg-transparent py-5'
         }`}
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
             {/* Logo */}
-            <div className="w-10 h-10 rounded-xl bg-amber-400 flex items-center justify-center shadow-lg">
-              <span className="text-brand-primary font-black text-xl leading-none">D</span>
+            <div className="w-10 h-10 rounded-xl bg-sky-400 flex items-center justify-center shadow-lg">
+              <span className="text-[#082f49] font-black text-xl leading-none">D</span>
             </div>
             <div>
               <h1 className="font-black text-2xl tracking-tight leading-none text-white">
@@ -58,8 +58,8 @@ const Header = () => {
               <Link
                 key={link.name}
                 to={link.path}
-                className={`whitespace-nowrap text-sm font-semibold transition-colors hover:text-amber-400 ${location.pathname === link.path
-                  ? 'text-amber-400'
+                className={`whitespace-nowrap text-sm font-semibold transition-colors hover:text-sky-400 ${location.pathname === link.path
+                  ? 'text-sky-400'
                   : 'text-white/70'
                   }`}
               >
@@ -74,7 +74,7 @@ const Header = () => {
               <Phone className="w-4 h-4" />
               +91 9600213XXX
             </a>
-            <Link to="/contact" className="whitespace-nowrap bg-brand-accent hover:bg-amber-300 text-brand-primary font-black text-sm px-6 py-2.5 rounded-full transition-all shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:shadow-[0_0_30px_rgba(251,191,36,0.5)]">
+            <Link to="/contact" className="whitespace-nowrap bg-sky-400 hover:bg-sky-300 text-[#082f49] font-black text-sm px-6 py-2.5 rounded-full transition-all shadow-[0_0_20px_rgba(251,191,36,0.3)] hover:shadow-[0_0_30px_rgba(251,191,36,0.5)]">
               Get In Touch
             </Link>
           </div>
@@ -91,13 +91,13 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-brand-primary shadow-xl border-t border-white/10 overflow-hidden animate-fade-in">
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-[#082f49] shadow-xl border-t border-white/10 overflow-hidden animate-fade-in">
           <nav className="flex flex-col py-4 px-6 gap-4">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-lg font-medium py-2 border-b border-white/5 ${location.pathname === link.path ? 'text-amber-400' : 'text-white/70'
+                className={`text-lg font-medium py-2 border-b border-white/5 ${location.pathname === link.path ? 'text-sky-400' : 'text-white/70'
                   }`}
               >
                 {link.name}
@@ -105,7 +105,7 @@ const Header = () => {
             ))}
             <div className="pt-4 flex flex-col gap-4">
               <a href="tel:+919600213XXX" className="flex items-center gap-3 text-lg font-bold text-white">
-                <div className="w-10 h-10 rounded-full bg-amber-400/10 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-sky-400/10 flex items-center justify-center">
                   <Phone className="w-5 h-5 text-white/60" />
                 </div>
                 +91 9600213XXX

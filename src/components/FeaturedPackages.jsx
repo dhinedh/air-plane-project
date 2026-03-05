@@ -10,7 +10,7 @@ const packages = [
     price: '₹85,000',
     per: 'per couple',
     tag: 'Bestseller',
-    tagColor: 'bg-brand-accent text-brand-primary',
+    tagColor: 'bg-sky-400 text-[#082f49]',
     image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80',
   },
   {
@@ -43,7 +43,7 @@ const packages = [
 ];
 
 const FeaturedPackages = () => (
-  <section className="py-28 bg-brand-primary">
+  <section className="py-28 bg-[#082f49]">
     <div className="container mx-auto px-6 lg:px-16">
 
       <motion.div
@@ -51,13 +51,13 @@ const FeaturedPackages = () => (
         className="flex justify-between items-end mb-16 flex-wrap gap-6"
       >
         <div className="flex items-center gap-5">
-          <div className="h-px w-16 bg-amber-400"></div>
+          <div className="h-px w-16 bg-sky-400"></div>
           <div>
-            <p className="text-amber-400 font-bold uppercase tracking-[0.25em] text-xs mb-2">Curated for You</p>
+            <p className="text-sky-400 font-bold uppercase tracking-[0.25em] text-xs mb-2">Curated for You</p>
             <h2 className="text-5xl md:text-6xl font-black text-white">Featured Packages</h2>
           </div>
         </div>
-        <Link to="/packages" className="flex items-center gap-2 text-white/40 hover:text-amber-400 transition-colors text-sm font-bold uppercase tracking-widest group">
+        <Link to="/packages" className="flex items-center gap-2 text-white/40 hover:text-sky-400 transition-colors text-sm font-bold uppercase tracking-widest group">
           All Packages <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </Link>
       </motion.div>
@@ -70,14 +70,14 @@ const FeaturedPackages = () => (
           <motion.div
             key={i}
             variants={fadeUp}
-            className="group relative rounded-2xl overflow-hidden bg-brand-surface border border-white/8 hover:border-brand-accent/30 transition-all duration-400 cursor-pointer"
+            className="group relative rounded-2xl overflow-hidden bg-white/4 border border-white/8 hover:border-sky-400/30 transition-all duration-400 cursor-pointer"
             whileHover={{ y: -6 }}
             transition={{ type: 'spring', stiffness: 260, damping: 22 }}
           >
             {/* Image */}
             <div className="relative h-52 overflow-hidden">
               <img src={pkg.image} alt={pkg.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#082f49] via-transparent to-transparent"></div>
               {/* Badge */}
               <span className={`absolute top-3 left-3 text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full ${pkg.tagColor}`}>
                 {pkg.tag}
@@ -86,17 +86,17 @@ const FeaturedPackages = () => (
 
             {/* Content */}
             <div className="p-6">
-              <h3 className="text-lg font-black text-white mb-2 leading-snug group-hover:text-amber-300 transition-colors">{pkg.title}</h3>
+              <h3 className="text-lg font-black text-white mb-2 leading-snug group-hover:text-sky-300 transition-colors">{pkg.title}</h3>
               <div className="flex items-center gap-2 text-white/40 text-xs font-semibold mb-5">
                 <Clock className="w-3.5 h-3.5" />
                 {pkg.duration}
               </div>
               <div className="flex items-end justify-between">
                 <div>
-                  <p className="text-amber-400 text-2xl font-black">{pkg.price}</p>
+                  <p className="text-sky-400 text-2xl font-black">{pkg.price}</p>
                   <p className="text-white/30 text-xs font-semibold">{pkg.per}</p>
                 </div>
-                <Link to="/contact" className="bg-brand-accent/10 hover:bg-brand-accent border border-brand-accent/30 hover:border-brand-accent text-brand-accent hover:text-brand-primary font-bold text-xs px-4 py-2 rounded-xl transition-all duration-300">
+                <Link to="/contact" className="bg-sky-400/10 hover:bg-sky-400 border border-sky-400/30 hover:border-sky-400 text-sky-400 hover:text-[#082f49] font-bold text-xs px-4 py-2 rounded-xl transition-all duration-300">
                   Book Now
                 </Link>
               </div>

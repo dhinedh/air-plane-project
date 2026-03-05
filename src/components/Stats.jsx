@@ -33,9 +33,9 @@ const Stats = () => {
   ];
 
   return (
-    <section className="bg-brand-primary py-0">
+    <section className="bg-[#082f49] py-0">
       {/* Full-width amber divider strip */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-amber-400/60 to-transparent"></div>
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-sky-400/60 to-transparent"></div>
 
       <div className="container mx-auto px-6 lg:px-16">
         <motion.div
@@ -52,9 +52,9 @@ const Stats = () => {
               className="flex flex-col items-center justify-center py-14 px-6 group hover:bg-white/3 transition-colors duration-500 relative"
             >
               {/* Amber top accent on hover */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[3px] w-0 group-hover:w-full bg-amber-400 transition-all duration-500 rounded-full"></div>
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[3px] w-0 group-hover:w-full bg-sky-400 transition-all duration-500 rounded-full"></div>
 
-              <div className="w-14 h-14 rounded-2xl bg-amber-400/10 border border-amber-400/20 flex items-center justify-center text-amber-400 mb-5 group-hover:bg-amber-400/20 group-hover:scale-110 transition-all duration-500">
+              <div className="w-14 h-14 rounded-2xl bg-sky-400/10 border border-sky-400/20 flex items-center justify-center text-sky-400 mb-5 group-hover:bg-sky-400/20 group-hover:scale-110 transition-all duration-500">
                 {stat.icon}
               </div>
               <h3 className="text-4xl font-black text-white mb-2">
@@ -66,7 +66,7 @@ const Stats = () => {
         </motion.div>
       </div>
 
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-amber-400/20 to-transparent"></div>
+      <div className="w-full h-px bg-gradient-to-r from-transparent via-sky-400/20 to-transparent"></div>
     </section>
   );
 };
