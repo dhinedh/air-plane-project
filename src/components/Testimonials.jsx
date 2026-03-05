@@ -34,7 +34,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-28 bg-[#082f49] relative overflow-hidden">
+    <section className="py-28 bg-brand-primary relative overflow-hidden">
       {/* Subtle radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-amber-400/5 rounded-full blur-[120px] pointer-events-none"></div>
 
@@ -98,7 +98,7 @@ const Testimonials = () => {
           <p className="text-white/30 text-xs uppercase tracking-[0.25em] mb-6 font-medium">Ready to create your story?</p>
           <a
             href="/contact"
-            className="inline-flex items-center gap-3 bg-amber-400 hover:bg-amber-300 text-[#082f49] font-black text-base px-10 py-4 rounded-full transition-all shadow-[0_0_40px_rgba(251,191,36,0.3)] hover:shadow-[0_0_60px_rgba(251,191,36,0.5)]"
+            className="inline-flex items-center gap-3 bg-brand-accent hover:bg-amber-300 text-brand-primary font-black text-base px-10 py-4 rounded-full transition-all shadow-[0_0_40px_rgba(251,191,36,0.3)] hover:shadow-[0_0_60px_rgba(251,191,36,0.5)]"
           >
             Plan My Trip Now →
           </a>

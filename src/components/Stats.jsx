@@ -33,7 +33,7 @@ const Stats = () => {
   ];
 
   return (
-    <section className="bg-[#082f49] py-0">
+    <section className="bg-brand-primary py-0">
       {/* Full-width amber divider strip */}
       <div className="w-full h-px bg-gradient-to-r from-transparent via-amber-400/60 to-transparent"></div>
 

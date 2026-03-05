@@ -36,7 +36,7 @@ const features = [
 ];
 
 const WhyChooseUs = () => (
-  <section className="py-28 bg-[#082f49] relative overflow-hidden">
+  <section className="py-28 bg-brand-primary relative overflow-hidden">
     {/* Subtle grid texture */}
     <div className="absolute inset-0 opacity-5 pointer-events-none"
       style={{ backgroundImage: 'linear-gradient(rgba(251,191,36,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(251,191,36,0.3) 1px, transparent 1px)', backgroundSize: '60px 60px' }}>

@@ -11,7 +11,7 @@ const Hero = () => {
   const textY = useTransform(scrollYProgress, [0, 1], ['0%', '12%']);
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-end pb-24 pt-28 overflow-hidden bg-[#082f49]">
+    <section ref={sectionRef} className="relative min-h-screen flex items-end pb-24 pt-28 overflow-hidden bg-brand-primary">
 
       {/* Parallax cinematic BG */}
       <motion.div
@@ -24,8 +24,8 @@ const Hero = () => {
           className="w-full h-full object-cover scale-110"
         />
         {/* Multi-layer overlays for dramatic look */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#082f49] via-[#082f49]/60 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#082f49]/80 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-primary via-brand-primary/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/80 via-transparent to-transparent"></div>
       </motion.div>
 
       {/* Gold accent line left */}
@@ -57,7 +57,7 @@ const Hero = () => {
             <motion.div variants={fadeUp} className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-16">
               <Link
                 to="/packages"
-                className="group inline-flex items-center gap-3 bg-amber-400 hover:bg-amber-300 text-[#060d1a] font-black text-lg px-10 py-4 rounded-full transition-all duration-300 shadow-[0_0_40px_rgba(251,191,36,0.4)] hover:shadow-[0_0_60px_rgba(251,191,36,0.6)]"
+                className="group inline-flex items-center gap-3 bg-brand-accent hover:bg-amber-300 text-brand-primary font-black text-lg px-10 py-4 rounded-full transition-all duration-300 shadow-[0_0_40px_rgba(251,191,36,0.4)] hover:shadow-[0_0_60px_rgba(251,191,36,0.6)]"
               >
                 Explore Packages
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

@@ -88,7 +88,7 @@ const Destinations = () => {
   );
 
   return (
-    <section className="py-28 bg-[#082f49]">
+    <section className="py-28 bg-brand-primary">
       <div className="container mx-auto px-6 lg:px-16">
 
         {/* Section eyebrow */}
@@ -108,7 +108,7 @@ const Destinations = () => {
 
         {/* CTA */}
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center">
-          <Link to="/packages" className="inline-flex items-center gap-3 bg-amber-400 hover:bg-amber-300 text-[#082f49] font-black text-lg px-12 py-4 rounded-full transition-all shadow-[0_0_40px_rgba(251,191,36,0.3)] hover:shadow-[0_0_60px_rgba(251,191,36,0.5)]">
+          <Link to="/packages" className="inline-flex items-center gap-3 bg-brand-accent hover:bg-amber-300 text-brand-primary font-black text-lg px-12 py-4 rounded-full transition-all shadow-[0_0_40px_rgba(251,191,36,0.3)] hover:shadow-[0_0_60px_rgba(251,191,36,0.5)]">
             Browse All Packages <ArrowRight className="w-5 h-5" />
           </Link>
         </motion.div>
