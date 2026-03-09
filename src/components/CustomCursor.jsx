@@ -33,27 +33,27 @@ const CustomCursor = () => {
 
   return (
     <>
-      {/* Outer ring - lags behind */}
+      {/* Outer ring - lags behind with mass for momentum */}
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference"
         animate={{
-          x: pos.x - (isHovering ? 24 : 16),
-          y: pos.y - (isHovering ? 24 : 16),
-          width: isHovering ? 48 : 32,
-          height: isHovering ? 48 : 32,
+          x: pos.x - (isHovering ? 28 : 16),
+          y: pos.y - (isHovering ? 28 : 16),
+          width: isHovering ? 56 : 32,
+          height: isHovering ? 56 : 32,
         }}
-        transition={{ type: 'spring', stiffness: 150, damping: 18, mass: 0.5 }}
+        transition={{ type: 'spring', stiffness: 200, damping: 25, mass: 0.8 }}
       >
-        <div className={`w-full h-full rounded-full border-2 border-white transition-all duration-300 ${isHovering ? 'bg-white/10' : ''}`} />
+        <div className={`w-full h-full rounded-full border border-white/80 transition-all duration-500 ${isHovering ? 'bg-white/15 scale-110' : 'bg-transparent'}`} />
       </motion.div>
 
-      {/* Inner dot - snaps instantly */}
+      {/* Inner dot - high precision snapping */}
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference"
-        animate={{ x: pos.x - 3, y: pos.y - 3 }}
-        transition={{ type: 'spring', stiffness: 600, damping: 30 }}
+        animate={{ x: pos.x - 2, y: pos.y - 2 }}
+        transition={{ type: 'spring', stiffness: 1000, damping: 40 }}
       >
-        <div className="w-1.5 h-1.5 rounded-full bg-white" />
+        <div className={`w-1 h-1 rounded-full bg-white transition-transform duration-300 ${isHovering ? 'scale-0' : 'scale-100'}`} />
       </motion.div>
     </>
   );

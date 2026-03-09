@@ -1,7 +1,6 @@
 import { Users, Clock, Globe2, Award } from 'lucide-react';
 import { motion, useInView, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useRef, useEffect } from 'react';
-import { fadeUp, staggerContainer } from '../utils/animations';
 
 const AnimatedCounter = ({ to, duration = 2.5 }) => {
   const ref = useRef(null);
@@ -9,66 +8,71 @@ const AnimatedCounter = ({ to, duration = 2.5 }) => {
   const count = useMotionValue(0);
   const spring = useSpring(count, { duration: duration * 1000, bounce: 0 });
   const display = useTransform(spring, (val) => {
-    if (to.includes('K')) return `${Math.round(val / 1000)}K+`;
-    if (to.includes('+')) return `${Math.round(val)}+`;
+    if (to.includes('K')) return `${Math.round(val / 1000)}K`;
+    if (to.includes('+')) return `${Math.round(val)}`;
     return `${Math.round(val)}`;
   });
-
   useEffect(() => {
-    if (isInView) {
-      const numericVal = parseInt(to.replace(/[^0-9]/g, ''));
-      count.set(numericVal);
-    }
+    if (isInView) count.set(parseInt(to.replace(/[^0-9]/g, '')));
   }, [isInView, count, to]);
-
   return <motion.span ref={ref}>{display}</motion.span>;
 };
 
-const Stats = () => {
-  const stats = [
-    { icon: <Users className="w-7 h-7" />, numeric: true, value: "500+", label: "Happy Travelers" },
-    { icon: <Clock className="w-7 h-7" />, numeric: false, value: "24x7", label: "Support Available" },
-    { icon: <Globe2 className="w-7 h-7" />, numeric: false, value: "6", label: "Continents Visited" },
-    { icon: <Award className="w-7 h-7" />, numeric: true, value: "21+", label: "Years of Experience" },
-  ];
+const stats = [
+  { icon: <Users className="w-5 h-5" />, value: "25000+", display: "25K+", suffix: "+", label: "Happy Travelers", sub: "and counting" },
+  { icon: <Clock className="w-5 h-5" />, value: null, display: "24×7", label: "Support Available", sub: "always there for you" },
+  { icon: <Globe2 className="w-5 h-5" />, value: null, display: "50+", label: "Destinations", sub: "across 6 continents" },
+];
 
-  return (
-    <section className="bg-[#082f49] py-0">
-      {/* Full-width amber divider strip */}
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-sky-400/60 to-transparent"></div>
+const Stats = () => (
+  <section className="bg-white relative overflow-hidden">
+    {/* Top thin divider */}
+    <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
 
-      <div className="container mx-auto px-6 lg:px-16">
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/8"
-        >
-          {stats.map((stat, i) => (
-            <motion.div
-              key={i}
-              variants={fadeUp}
-              className="flex flex-col items-center justify-center py-14 px-6 group hover:bg-white/3 transition-colors duration-500 relative"
-            >
-              {/* Amber top accent on hover */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 h-[3px] w-0 group-hover:w-full bg-sky-400 transition-all duration-500 rounded-full"></div>
+    <div className="container mx-auto px-6 lg:px-16 py-0">
+      <div className="grid grid-cols-2 lg:grid-cols-3">
+        {stats.map((stat, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1, duration: 0.6 }}
+            className={`group flex flex-col justify-center py-12 px-8 relative
+              ${i < stats.length - 1 ? 'border-r border-gray-100' : ''}
+              ${i >= 2 && stats.length > 2 ? 'border-t border-gray-100 lg:border-t-0' : ''}`}
+          >
+            {/* Hover bg */}
+            <div className="absolute inset-2 rounded-2xl bg-sky-50/0 group-hover:bg-sky-50/60 transition-colors duration-400" />
 
-              <div className="w-14 h-14 rounded-2xl bg-sky-400/10 border border-sky-400/20 flex items-center justify-center text-sky-400 mb-5 group-hover:bg-sky-400/20 group-hover:scale-110 transition-all duration-500">
+            {/* Icon pill */}
+            <div className="flex items-center gap-2 mb-4 relative z-10">
+              <div className="w-8 h-8 rounded-lg bg-sky-500 text-white flex items-center justify-center">
                 {stat.icon}
               </div>
-              <h3 className="text-4xl font-black text-white mb-2">
-                {stat.numeric ? <AnimatedCounter to={stat.value} /> : stat.value}
-              </h3>
-              <p className="text-white/40 text-xs font-bold uppercase tracking-[0.18em] text-center">{stat.label}</p>
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
+              <div className="h-px flex-1 bg-gradient-to-r from-sky-100 to-transparent" />
+            </div>
 
-      <div className="w-full h-px bg-gradient-to-r from-transparent via-sky-400/20 to-transparent"></div>
-    </section>
-  );
-};
+            {/* Big number */}
+            <p className="text-6xl lg:text-7xl font-black text-gray-900 leading-none tracking-tighter mb-1 relative z-10">
+              {stat.value
+                ? <><AnimatedCounter to={stat.value} />{stat.suffix}</>
+                : stat.display}
+            </p>
+
+            {/* Label */}
+            <p className="text-gray-700 font-black text-sm uppercase tracking-widest mt-3 relative z-10">{stat.label}</p>
+            <p className="text-gray-300 text-xs font-medium mt-0.5 relative z-10">{stat.sub}</p>
+
+            {/* Bottom accent line on hover */}
+            <div className="absolute bottom-0 left-8 right-8 h-[2px] bg-sky-400 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 rounded-full" />
+          </motion.div>
+        ))}
+      </div>
+    </div>
+
+    <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
+  </section>
+);
 
 export default Stats;
